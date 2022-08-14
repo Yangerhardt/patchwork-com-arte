@@ -120,3 +120,4 @@ sobre_pers_btn.addEventListener('click', (evt) => {
 })
 
 // PERSONALIZE BUTTON
+

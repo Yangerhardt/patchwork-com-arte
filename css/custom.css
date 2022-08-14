@@ -1,6 +1,8 @@
 body, html {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
+/*   opacity: 0;
+  animation: vanish 1s ease 5s forwards; */
 }
 
 #header {
@@ -341,3 +343,20 @@ footer {
     opacity: 1;
   }
 }
+
+/* @keyframes vanish {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+#loading-img {
+  width: 200px;
+  opacity: 1 !important;
+  visibility: visible !important;
+} */
