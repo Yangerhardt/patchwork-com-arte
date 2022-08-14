@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patchwork com Arte</title>
+  <link rel="stylesheet" href="/patchwork-com-arte/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--HEADER-->
+  <div id="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a href="#">
+          <img src="/patchwork-com-arte/images/logo-teste.png" alt="logo-site" id="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="page_up()">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="seç-sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="seç-prod">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="seç-pers">Personalize</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="seç-cont">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!--HEADER-->
+
+  <!--CARROSSEL-->
+<div class="carousel-container">
+  <div id="carousel" class="pt-5 pb-5">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/patchwork-com-arte/images/carrosel-1.jpg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="/patchwork-com-arte/images/carrosel-2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/patchwork-com-arte/images/carrosel-3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/patchwork-com-arte/images/carrosel-4.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+  <!--CARROSSEL-->
+
+  <!--SOBRE-->
+  <div id="sobre">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center align-self-center order-lg-1 order-2">
+          <img src="/patchwork-com-arte/images/sobre-img.png" class="img-fluid pt-md-5" alt="">
+        </div>
+        <div class="col-lg-6 order-lg-2 order-1 sobre">
+          <h1 class="title">Quem somos <span id="pergunta">?</span></h1>
+          <img src="/patchwork-com-arte/icons/patchwork-icon.png" alt="patchwork-icon" class="icon img-fluid">
+          <p>Expressamos a criatividade através da <strong>arte</strong>, inovando em cada peça e fazendo-a <strong>única</strong>. 
+            Buscamos criar ambientes personalizados e aconchegantes, assim como produtos que demonstrem a personalidade de quem o usar.
+          </p>
+          <button type="button" class="btn btn-outline-danger btn-personalizado">Personalize</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--SOBRE-->
+
+
+  <!--PRODUTOS-->
+  <div id="produtos">
+    <div class="container">
+        <h2 class="title">Produtos</h2>
+        <div class="produto produto1">
+          <div class="descrição ">TOALHAS</div>
+        </div>
+        <div class="produto produto2">
+          <div class="descrição">MÁSCARAS</div>
+        </div>
+        <div class="produto produto3">
+          <div class="descrição">JOGOS AMERICANOS</div>
+        </div>
+        <div class="produto produto4">
+          <div class="descrição">CAPAS</div>
+        </div>
+        <div class="produto produto5">
+          <div class="descrição">BOLSAS</div>
+        </div>
+    </div>
+  </div>
+  <!--PRODUTOS-->
+
+
+  <!--PERSONALIZE-->
+  <div id="personalize">
+    <div class="container">
+      <div class="row">
+        <h2 class="title">Personalize</h2>
+          <div class="col-lg-5 personalize-text">
+            <img src="/patchwork-com-arte/icons/create-icon.png" alt="">
+            <h4>Não encontrou o que procurava?</h4> 
+            <p>Temos uma variada quantidade de modelos e tecidos para que você possa personalizar ainda mais e deixar as coisas no <strong>seu</strong> estilo.</strong></p>  
+          </div>
+          <div class="col-lg-7">
+            <div class="personalize-cont">
+              <div class="personalize-icone">
+                <img src="/patchwork-com-arte/icons/model-icon.png" alt="">
+                <p>Escolha o modelo</p>
+              </div>
+              <div class="personalize-icone">
+                <img src="/patchwork-com-arte/icons/tecido-icon.png" alt="">
+                <p>Escolha o tecido</p>
+              </div>
+            </div>
+            <div class="personalize-cont">
+              <div class="personalize-icone">
+                <img src="/patchwork-com-arte/icons/medidas-icon.png" alt="">
+                <p>Escolha as dimensões</p>
+              </div>
+              <div class="personalize-icone">
+                <img src="/patchwork-com-arte/icons/heart-icon.png" alt="">
+                <p>Desfrute</p>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+  <!--PERSONALIZE-->
+
+  <!--FOOTER-->
+  <footer id="final">
+    <div class="container-fluid bg-final">
+      <div class="icones-final">
+        <a href="mailto:rosane-kg@gmail.com" target="_blank">
+          <img src="/patchwork-com-arte/icons/email-icon.png" alt="mail icon" id="icone-final">
+        </a>
+        <a href="https://www.instagram.com/patchworkcomarte/" target="_blank">
+          <img src="/patchwork-com-arte/icons/instagram-icon.png" alt="mail icon" id="icone-final">
+        </a>
+        <a href="https://wa.me/5551997140762" target="_blank">
+          <img src="/patchwork-com-arte/icons/whatsapp-icon.png" alt="mail icon" id="icone-final">
+        </a>
+            </div>
+      <div class="msg-final">
+        &copy; 2022 Patchwork com Arte  
+      </div>
+    </div>
+  </footer>
+  <!--FOOTER-->
+
+
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/patchwork-com-arte/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+@media (max-width: 500px) {
+    .personalize-text::before {
+        top: -7px;
+        left: -6px;
+      }
+
+    }
+
+@media (max-width: 700px) {
+    #sobre {
+        margin-top: 40px;
+    }
+    #personalize {
+        margin-bottom: 100px;
+    }
+    .personalize-text {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .descrição {
+        padding: 6%;
+    }
+
+}

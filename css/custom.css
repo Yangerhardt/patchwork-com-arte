@@ -1,0 +1,343 @@
+body, html {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+}
+
+#header {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+  height: 65px;
+  width: 100%;
+}
+
+
+#header .navbar-collapse {
+  width: 100%;
+  background-color: white;
+  z-index: 20;
+}
+
+.header-spacing {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navbarNav a {
+  font-weight: 100;
+  border-bottom: 4px transparent solid;
+  letter-spacing: 1px;
+}
+
+#navbarNav a:hover {
+  border-bottom: 4px solid var(--dark);
+}
+
+.carousel-container {
+  background-image: url(/patchwork-com-arte/images/background-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#carousel {
+  width: 60%;
+  margin: auto;
+}
+
+#carousel .carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  }
+
+#logo {
+  height: 60px;
+  width: 190px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.9;
+}
+
+#sobre {
+  background-image: linear-gradient(var(--background-color), var(--medium), var(--background-color));
+  padding: 50px;
+  margin: 100px 30px;
+  border-radius: 20px;
+  opacity: 0;
+}
+
+.sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+#pergunta {
+  color: var(--darkest);
+}
+
+.icon {
+  width: 50px;
+  margin: 0px 0 50px 0;
+}
+
+.btn-personalizado {
+  border-color: var(--darkest);
+  color: white;
+  background-color: var(--darkest);
+  margin: 30px;
+}
+
+#produtos {
+  margin-bottom: 100px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 80px;
+  font-size: 2.5em;
+}
+
+.produto {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1);
+  height: 180px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin: 20px 0;
+  transform: translateX(-2000px);
+  opacity: 0;
+}
+
+.produto:hover {
+  filter: grayscale(0);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.descrição {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 10px;
+  padding: 6%;
+}
+
+.produto1 {
+  background-image: url(/patchwork-com-arte/images/carrosel-1.jpg);
+}
+
+.produto2 {
+  background-image: url(/patchwork-com-arte/images/carrosel-4.jpg);
+}
+
+.produto3 {
+  background-image: url(/patchwork-com-arte/images/carrosel-3.jpg);
+}
+
+.produto4 {
+  background-image: url(/patchwork-com-arte/images/carrosel-2.jpg);
+}
+
+.produto5 {
+  background-image: url(/patchwork-com-arte/images/produtos-5.jpg);
+}
+
+
+#personalize {
+  margin-bottom: 200px;
+  opacity: 0;
+}
+
+.personalize-text {
+  text-align: center;
+  padding-top: 80px;
+  background-image: url(/patchwork-com-arte/images/personalize-bg-teste.jpg);
+  border-radius: 40px;
+  position: relative;
+  color: white;
+  height: 380px;
+}
+
+.personalize-text::before {
+  content: ""; /* SEM O content: ""; O PSEUDO ELEMENTO NÃO FUNCIONA!!!!! */
+  position: absolute;
+  border: 2px var(--darkest);
+  border-style: dashed;
+  border-radius: 40px;
+  top: -8px;
+  left: -8px;
+  height: 104%;
+  width: 104%;
+}
+
+.personalize-text img {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;  
+  margin-bottom: 30px;
+  filter: invert(100%) sepia(0%) saturate(7466%) hue-rotate(144deg) brightness(112%) contrast(110%);
+}
+
+.personalize-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personalize-icone {
+  height: 150px;
+  width: 150px;
+  border: 1px solid var(--darkest);
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9em;
+  transition: 0.3s ease;
+  background-color: var(--background-color);
+  border-radius: 15px;
+}
+
+.personalize-icone:hover {
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  animation: change-color forwards 1s ease-in;
+  border-color: var(--background-color);
+}
+
+
+.personalize-icone img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-color: var(--darkest);
+  transition: 0.3s ease;
+}
+
+.personalize-icone:hover img {
+  filter: invert(100%) sepia(0%) saturate(7466%) hue-rotate(144deg) brightness(112%) contrast(110%);
+}
+
+footer {
+  height: 300px;
+  width: 100%;
+  background-image: linear-gradient(var(--background-color), var(--darkest));
+  position: relative;
+}
+
+.icones-final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#icone-final {
+  height: 100%;
+  width: 35px;
+  margin: 150px 15px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#icone-final:hover {
+  transform: scale(1.2);
+}
+
+.msg-final {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darkest);
+}
+
+.produtos-slide-in {
+  animation: slide-into 1s ease forwards;
+}
+
+.fade {
+  animation: fade 1.5s ease forwards;
+}
+
+.na-pagina {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fora-da-pagina {
+  transform: translateX(-2000px);
+  opacity: 0;
+}
+
+.on-page {
+  opacity: 1;
+}
+
+.out-of-page {
+  opacity: 0;
+}
+
+.sticky-top {
+  transition: all 1s ease;
+}
+
+@keyframes change-color { 
+  0% {
+    background-color: var(--light);
+  }
+  15% {
+    background-color: var(--lighter);
+  }
+  35% {
+    background-color: var(--medium);
+  }
+  65% {
+    background-color: var(--dark);
+  }
+  100% {
+    background-color: var(--darkest);
+  }
+}
+
+@keyframes slide-into {
+  from {
+    transform: translateX(-2000px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
