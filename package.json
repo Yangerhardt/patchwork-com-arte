@@ -1,0 +1,28 @@
+{
+  "name": "patchwork-com-arte",
+  "version": "1.0.0",
+  "description": "![GitHub All Releases](https://img.shields.io/github/last-commit/Yangerhardt/patchwork-com-arte?logo=GitHub)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yangerhardt/patchwork-com-arte.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yangerhardt/patchwork-com-arte/issues"
+  },
+  "homepage": "https://github.com/Yangerhardt/patchwork-com-arte#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "nodemon": "^2.0.20"
+  }
+}

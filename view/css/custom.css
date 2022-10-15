@@ -33,7 +33,7 @@ body, html {
 }
 
 .carousel-container {
-  background-image: url(/patchwork-com-arte/images/background-img.jpg);
+  background-image: url(/public/images/background-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -128,23 +128,23 @@ body, html {
 }
 
 .produto1 {
-  background-image: url(/patchwork-com-arte/images/carrosel-1.jpg);
+  background-image: url(/public/images/carrosel-1.jpg);
 }
 
 .produto2 {
-  background-image: url(/patchwork-com-arte/images/carrosel-4.jpg);
+  background-image: url(/public/images/carrosel-4.jpg);
 }
 
 .produto3 {
-  background-image: url(/patchwork-com-arte/images/carrosel-3.jpg);
+  background-image: url(/public/images/carrosel-3.jpg);
 }
 
 .produto4 {
-  background-image: url(/patchwork-com-arte/images/carrosel-2.jpg);
+  background-image: url(/public/images/carrosel-2.jpg);
 }
 
 .produto5 {
-  background-image: url(/patchwork-com-arte/images/produtos-5.jpg);
+  background-image: url(/public/images/produtos-5.jpg);
 }
 
 
@@ -156,7 +156,7 @@ body, html {
 .personalize-text {
   text-align: center;
   padding-top: 80px;
-  background-image: url(/patchwork-com-arte/images/personalize-bg-teste.jpg);
+  background-image: url(/public/images/personalize-bg-teste.jpg);
   border-radius: 40px;
   position: relative;
   color: white;
