@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patchwork com Arte</title>
+    <link rel="stylesheet" href="/view/home/css/main.css" />
+    <link rel="stylesheet" href="/view/addProduto/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a href="/view/index.html">
+            <img
+              src="/public/images/logo-teste.png"
+              alt="logo-site"
+              id="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/view/index.html">Home</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--HEADER-->
+
+    <!--CADASTRO DE PRODUTOS-->
+
+    <div class="container">
+      <form action="" method="post" enctype="multipart/form-data" class="cadastro-produto">
+        <div class="produto-cadastrado text-center"></div>
+        <div class="campo-input">
+          <label for="name">Nome do produto</label>
+          <input type="text" placeholder="Nome" class="cadastro-input cadastro-nome" />
+          <div class="erro-nome"></div>
+        </div>
+        <div class="campo-input">
+          <label for="name">Valor do produto</label>
+          <input type="text" placeholder="Valor" class="cadastro-input cadastro-valor"/>
+          <div class="container-valor">
+            <p class="cadastro-moeda">R$</p>
+          </div>
+          <div class="erro-valor"></div>
+        </div>
+        <div class="campo-input">
+          <label for="name">Status do produto</label>
+          <input type="text" placeholder="Disponível ou indisponível" class="cadastro-input cadastro-status" list="opcoes"/>
+            <datalist id="opcoes">
+              <option name="category1" value="Disponivel" selected="true"></option>
+              <option name="category1" value="Indisponivel"></option>
+            </datalist>
+          <div class="erro-status"></div>
+        </div>
+        <div class="campo-input">
+          <label for="name">Imagem do produto</label>
+          <input type="file" accept=".jpg, .svg, .png" class="cadastro-img"/>
+          <div class="erro-img"></div>
+        </div>
+        <input type="submit" value="Cadastrar" class="cadastro-btn">
+
+      </form>
+    </div>
+
+    <!--CADASTRO DE PRODUTOS-->
+
+    <!--FOOTER-->
+    <footer id="final">
+      <div class="container-fluid bg-final">
+        <div class="icones-final">
+          <a href="mailto:rosane-kg@gmail.com" target="_blank">
+            <img
+              src="/public/icons/email-icon.png"
+              alt="mail icon"
+              id="icone-final"
+            />
+          </a>
+          <a href="https://www.instagram.com/patchworkcomarte/" target="_blank">
+            <img
+              src="/public/icons/instagram-icon.png"
+              alt="mail icon"
+              id="icone-final"
+            />
+          </a>
+          <a href="https://wa.me/5551997140762" target="_blank">
+            <img
+              src="/public/icons/whatsapp-icon.png"
+              alt="mail icon"
+              id="icone-final"
+            />
+          </a>
+        </div>
+        <div class="msg-final">&copy; 2022 Patchwork com Arte</div>
+      </div>
+    </footer>
+    <!--FOOTER-->
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="/view/addProduto/js/main.js"></script>
+  </body>
+</html>
