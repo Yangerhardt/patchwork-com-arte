@@ -55,7 +55,7 @@
     <!--CADASTRO DE PRODUTOS-->
 
     <div class="container">
-      <form action="" method="post" enctype="multipart/form-data" class="cadastro-produto">
+      <form method="post" enctype="multipart/form-data" class="cadastro-produto">
         <div class="produto-cadastrado text-center"></div>
         <div class="campo-input">
           <label for="name">Nome do produto</label>
@@ -81,11 +81,10 @@
         </div>
         <div class="campo-input">
           <label for="name">Imagem do produto</label>
-          <input type="file" accept=".jpg, .svg, .png" class="cadastro-img"/>
+          <input type="file" accept=".jpg, .svg, .png" class="cadastro-img" name="avatar"/>
           <div class="erro-img"></div>
         </div>
         <input type="submit" value="Cadastrar" class="cadastro-btn">
-
       </form>
     </div>
 

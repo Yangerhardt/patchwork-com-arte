@@ -3,6 +3,11 @@ body, html {
   background-color: var(--background-color);
 }
 
+.bot {
+  display: flex;
+  flex-displ
+}
+
 #header {
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);

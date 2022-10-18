@@ -1,5 +1,5 @@
-const salvaDados = (url, nome, valor, status, img) => {
-  fetch(url, {
+async function salvaDados(url, nome, valor, status, img) {
+  await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -14,7 +14,8 @@ const salvaDados = (url, nome, valor, status, img) => {
     }),
   })
     .then((res) => res.json())
-    .then((data) => console.log(status));
+    .then(console.log("Cadastro realizado"))
 };
+
 
 export default salvaDados
