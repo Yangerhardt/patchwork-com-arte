@@ -1,4 +1,5 @@
 import salvaDados from "./salvaDados.js";
+import salvaImagem from "./salvaImagem.js";
 import Verificacao from "./verificacao.js";
 
 const nome = document.querySelector(".cadastro-nome");
@@ -31,8 +32,9 @@ form.addEventListener("submit", (e) => {
   Verificacao.verificaStatus(formStatus.value);
   Verificacao.verificaImg(img.value);
   salvaDados(url, nome.value, valor.value, formStatus.value, img.value);
+  salvaImagem(base64.split(';base64,').pop())
 
-
+    console.log(base64.split(';base64,').pop());
   /*   if() {
     produtoCadastrado();
 
@@ -43,31 +45,18 @@ form.addEventListener("submit", (e) => {
   } */
 });
 
+let base64 = "";
 
 function teste() {
-  const reader = new FileReader()
+  const reader = new FileReader();
+  reader.readAsDataURL(img.files[0]);
+
   reader.onload = function () {
-    const base64 = reader.result
-    console.log(base64);
-  }
-  reader.readAsDataURL(img.files[0])
+    console.log('executado');
+    return (base64 = reader.result);
+  };
 }
 
-img.addEventListener("change", () => {
-
-
-
-  fetch("http://localhost:8080/arquivos", 
-  {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      teste: valor
-    }),
-  })
-    .then((r) => r.json())
-    .then(res => console.log(res))
-})
+img.addEventListener("change", () => {;
+  teste()
+});
