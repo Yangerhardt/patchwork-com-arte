@@ -1,0 +1,99 @@
+@import url(/view/home/css/global.css);
+
+h1 {
+  text-align: center;
+  color: var(--teste);
+  font-size: 3rem;
+}
+
+.lado-a-lado {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container {
+  max-width: 60%;
+  margin-bottom: 70px;
+}
+
+form {
+  margin-top: 100px;
+  background-color: var(--dark);
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.produto-cadastrado {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(133, 182, 133);
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.campo-input-lado {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  width: 40%;
+}
+
+.campo-input {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 32px;
+  width: 87%;
+}
+
+.campo-input label, .campo-input-lado label {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--teste);
+}
+
+.cadastro-input {
+  border: none;
+  padding: 12px 0 12px 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.cadastro-input:focus {
+  outline: none;
+}
+
+.cadastro-btn {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--teste);
+  transition: 0.3s ease;
+  font-size: 1.2em;
+  margin-top: 40px;
+}
+
+.cadastro-btn:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0.8;
+  color: white;
+}
+
+.erro-nome,
+.erro-sobrenome,
+.erro-email,
+.erro-senha1,
+.erro-senha2,
+.erro-cep,
+.erro-bairro,
+.erro-rua,
+.erro-complemento,
+.erro-cidade,
+.erro-estado {
+  color: red;
+  font-weight: bold;  
+}

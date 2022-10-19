@@ -235,22 +235,24 @@ body, html {
 footer {
   height: 300px;
   width: 100%;
-  background-image: linear-gradient(var(--background-color), var(--darkest));
+  background-image: linear-gradient(var(--background-color), var(--dark));
   position: relative;
 }
 
-.icones-final {
+.icones-final-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 150px;
 }
 
 #icone-final {
   height: 100%;
   width: 35px;
-  margin: 150px 15px 0;
+  margin: 0 20px 0;
   cursor: pointer;
   transition: 0.3s ease;
+  filter: brightness(0) invert(1);
 }
 
 #icone-final:hover {
@@ -261,6 +263,7 @@ footer {
   text-align: center;
   margin-top: 20px;
   font-size: 0.8em;
+  color:  white;
 }
 
 ::-webkit-scrollbar {
