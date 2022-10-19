@@ -12,21 +12,10 @@ class Verificacao {
     }
   };
 
-  static verificaNome = (nome) => {
+  static verificaNomeSobrenome = (nome, name) => {
     const reg = new RegExp(/[0-9]+/);
-    let erro = document.querySelector(`.erro-nome`);
+    let erro = document.querySelector(`.erro-${name}`);
     if (nome.trim() == "" || nome.search(reg) > -1) {
-      erro.innerHTML = "Campo obrigatório";
-      return;
-    } else {
-      erro.innerHTML = "";
-    }
-  };
-
-  static verificaSobrenome = (sobrenome) => {
-    const reg = new RegExp(/[0-9]+/);
-    let erro = document.querySelector(`.erro-sobrenome`);
-    if (sobrenome.trim() == "" || sobrenome.search(reg) > -1) {
       erro.innerHTML = "Campo obrigatório";
       return;
     } else {

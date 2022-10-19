@@ -1,4 +1,4 @@
-import salvaDados from "./salvaDados.js";
+import salvaDados from "./salvaDadosProduto.js";
 import salvaImagem from "./salvaImagem.js";
 import Verificacao from "./verificacao.js";
 
@@ -9,7 +9,6 @@ const img = document.querySelector(".cadastro-img");
 const form = document.querySelector(".cadastro-produto");
 const sucesso = document.querySelector(".produto-cadastrado");
 const url = "http://localhost:8080/produtos";
-const CLIENT_ID = "e5f08dbf3c90edb";
 
 /* const produtoCadastrado = () => {
   sucesso.innerHTML = `Produto cadastrado com sucesso

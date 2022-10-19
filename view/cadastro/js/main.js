@@ -9,9 +9,11 @@ const estado = document.querySelector(".cadastro-estado");
 const email = document.querySelector(".cadastro-email");
 const nome = document.querySelector(".cadastro-nome");
 const sobrenome = document.querySelector(".cadastro-sobrenome");
-const senha = document.querySelector(".cadastro-senha1")
-const confirmaSenha = document.querySelector(".cadastro-senha2")
-const form = document.querySelector(".cadastro-produto")
+const senha = document.querySelector(".cadastro-senha1");
+const confirmaSenha = document.querySelector(".cadastro-senha2");
+const form = document.querySelector(".cadastro-produto");
+
+const url = "http://localhost:8080/clientes";
 
 cep.addEventListener("focusout", async () => {
   if (Verificacao.verificaCep(cep.value)) {
@@ -28,14 +30,28 @@ cep.addEventListener("focusout", async () => {
   }
 });
 
-form.addEventListener("submit" , (e) => {
-  e.preventDefault()
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let cliente = {};
 
-  Verificacao.verificaEmail(email.value)
-  Verificacao.verificaNome(nome.value)
-  Verificacao.verificaSobrenome(sobrenome.value)
-  Verificacao.verificaCep(cep.value)
-  Verificacao.verificaSenha(senha.value)
-  Verificacao.verificaSenhaDuplicada(senha.value, confirmaSenha.value)
+  Verificacao.verificaEmail(email.value);
+  Verificacao.verificaNomeSobrenome(nome.value, nome.name);
+  Verificacao.verificaNomeSobrenome(sobrenome.value, sobrenome.name);
+  Verificacao.verificaCep(cep.value);
+  Verificacao.verificaSenha(senha.value);
+  Verificacao.verificaSenhaDuplicada(senha.value, confirmaSenha.value);
 
-})
+  cliente = {
+    nome: nome.value,
+    sobrenome: sobrenome.value,
+    email: email.value,
+    senha: senha.value,
+    cep: cep.value,
+    bairro: bairro.value,
+    rua: rua.value,
+    numero: numero.value,
+    complemento: complemento.value,
+    cidade: cidade.value,
+    estado: estado.value,
+  };
+});
