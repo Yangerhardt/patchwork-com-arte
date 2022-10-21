@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patchwork com Arte</title>
+    <link rel="stylesheet" href="/view/home/css/main.css" />
+    <link rel="stylesheet" href="/view/cadastro/cadastroSuccess/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a href="/view/index.html">
+            <img
+              src="/public/images/logo-teste.png"
+              alt="logo-site"
+              id="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/view/index.html">Home</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--HEADER-->
+
+    <div class="conteudo">
+      <!--MENSAGEM DE SUCESSO DE CADASTRO-->
+      <div class="container">
+        <div class="client-sucess">
+          <h3>Usuário cadastrado com sucesso</h3>
+          <p>Você agora pode acessar a página de login utilizando o seu e-mail e senha cadastrados.</p>
+          <a href="/view/login/index.html" class="login_success">Login</a>
+        </div>
+      </div>
+      <!--MENSAGEM DE SUCESSO DE CADASTRO-->
+
+      <!--FOOTER-->
+      <footer id="final">
+        <div class="container-fluid bg-final">
+          <div class="icones-final-container">
+            <a href="mailto:rosane-kg@gmail.com" target="_blank">
+              <img
+                src="/public/icons/email-icon.png"
+                alt="mail icon"
+                id="icone-final"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/patchworkcomarte/"
+              target="_blank"
+            >
+              <img
+                src="/public/icons/instagram-icon.png"
+                alt="mail icon"
+                id="icone-final"
+              />
+            </a>
+            <a href="https://wa.me/5551997140762" target="_blank">
+              <img
+                src="/public/icons/whatsapp-icon.png"
+                alt="mail icon"
+                id="icone-final"
+              />
+            </a>
+          </div>
+          <div class="msg-final">&copy; 2022 Patchwork com Arte</div>
+        </div>
+      </footer>
+      <!--FOOTER-->
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="/view/cadastro/js/main.js"></script>
+  </body>
+</html>

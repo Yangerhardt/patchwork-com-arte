@@ -3,18 +3,12 @@ body, html {
   background-color: var(--background-color);
 }
 
-.bot {
-  display: flex;
-  flex-displ
-}
-
 #header {
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
   height: 65px;
   width: 100%;
 }
-
 
 #header .navbar-collapse {
   width: 100%;
@@ -234,9 +228,8 @@ body, html {
 
 footer {
   height: 300px;
-  width: 100%;
   background-image: linear-gradient(var(--background-color), var(--dark));
-  position: relative;
+
 }
 
 .icones-final-container {

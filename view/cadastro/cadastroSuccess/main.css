@@ -1,0 +1,44 @@
+@import url("/view/home/css/global.css");
+
+.conteudo {
+  position: relative;
+  min-height: 100vh;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.client-sucess {
+  background-color: var(--dark);
+  color: var(--teste);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  height: 25vh;
+}
+
+.client-sucess p {
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.login_success {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--teste);
+  padding: 16px 40px;
+  border-radius: 8px;
+}
+
+.login_success:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0.8;
+  color: white;
+}

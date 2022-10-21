@@ -1,9 +1,13 @@
 import consultaCep from "./consultaCep.js";
+import salvaDadosCliente from "./salvaDadosCliente.js";
 import Verificacao from "./verificacao.js";
 
+// MUDAR OS QS PARA querySelectorALL E PEGAR CADA UM NO MOMENTO DO USO DENTRO DO ARRAY/OBJECT
 const cep = document.querySelector(".cadastro-cep");
 const bairro = document.querySelector(".cadastro-bairro");
 const rua = document.querySelector(".cadastro-rua");
+const numeroRua = document.querySelector(".cadastro-numero");
+const complemento = document.querySelector(".cadastro-complemento");
 const cidade = document.querySelector(".cadastro-cidade");
 const estado = document.querySelector(".cadastro-estado");
 const email = document.querySelector(".cadastro-email");
@@ -12,6 +16,13 @@ const sobrenome = document.querySelector(".cadastro-sobrenome");
 const senha = document.querySelector(".cadastro-senha1");
 const confirmaSenha = document.querySelector(".cadastro-senha2");
 const form = document.querySelector(".cadastro-produto");
+const cadastroFinalizado = document.querySelector(".final-cadastro")
+const testeQS = document.querySelectorAll("input");
+/* console.log(testeQS);
+
+for (let elements of testeQS) {
+  console.log(elements);
+} */
 
 const url = "http://localhost:8080/clientes";
 
@@ -33,25 +44,38 @@ cep.addEventListener("focusout", async () => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   let cliente = {};
+  let totalErros = [];
 
-  Verificacao.verificaEmail(email.value);
-  Verificacao.verificaNomeSobrenome(nome.value, nome.name);
-  Verificacao.verificaNomeSobrenome(sobrenome.value, sobrenome.name);
-  Verificacao.verificaCep(cep.value);
-  Verificacao.verificaSenha(senha.value);
-  Verificacao.verificaSenhaDuplicada(senha.value, confirmaSenha.value);
 
-  cliente = {
-    nome: nome.value,
-    sobrenome: sobrenome.value,
-    email: email.value,
-    senha: senha.value,
-    cep: cep.value,
-    bairro: bairro.value,
-    rua: rua.value,
-    numero: numero.value,
-    complemento: complemento.value,
-    cidade: cidade.value,
-    estado: estado.value,
-  };
+  Verificacao.verificaEmail(email.value, totalErros);
+  Verificacao.verificaNomeSobrenome(nome.value, nome.name, totalErros);
+  Verificacao.verificaNomeSobrenome(sobrenome.value, sobrenome.name, totalErros);
+  Verificacao.verificaNumero(numeroRua.value, numeroRua.name, totalErros);
+  Verificacao.verificaCep(cep.value, totalErros);
+  Verificacao.verificaSenha(senha.value, totalErros);
+  Verificacao.verificaSenhaDuplicada(senha.value, confirmaSenha.value, totalErros);
+
+  if (totalErros.length === 0) {
+    cliente = {
+      nome: nome.value,
+      sobrenome: sobrenome.value,
+      email: email.value,
+      senha: senha.value,
+      cep: cep.value,
+      bairro: bairro.value,
+      rua: rua.value,
+      numero: numeroRua.value,
+      complemento: complemento.value,
+      cidade: cidade.value,
+      estado: estado.value,
+    };
+
+/*     salvaDadosCliente(url, cliente); */
+    for (let elements of testeQS) {
+      elements.value = ""
+    }
+    cadastroFinalizado.innerHTML = "Cadastro realizado com sucesso &#10004;"
+    cadastroFinalizado.classList.add("p-2")
+    location.replace("./cadastroSuccess/")
+  }
 });

@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const clienteSchema = new mongoose.Schema( {
   id: {type: String},
+  admin: {stype: String},
   nome: {type: String, required: true},
   sobrenome: {type: String, required: true},
   email: {type: String, required: true},

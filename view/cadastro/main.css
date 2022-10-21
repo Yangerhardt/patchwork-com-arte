@@ -1,5 +1,3 @@
-@import url(/view/home/css/global.css);
-
 h1 {
   text-align: center;
   color: var(--teste);
@@ -12,7 +10,7 @@ h1 {
 }
 
 .container {
-  max-width: 60%;
+  max-width: 70%;
   margin-bottom: 70px;
 }
 
@@ -83,6 +81,16 @@ form {
   color: white;
 }
 
+.final-cadastro {
+  text-align: center;
+  font-size: 18px;
+  margin: 32px auto 0;
+  width: 70%;
+  color: rgb(1, 99, 1);
+  background-color: #769C51;
+  border-radius: 8px;
+}
+
 .erro-nome,
 .erro-sobrenome,
 .erro-email,
@@ -91,9 +99,10 @@ form {
 .erro-cep,
 .erro-bairro,
 .erro-rua,
-.erro-complemento,
+.erro-numero,
 .erro-cidade,
-.erro-estado {
+.erro-estado,
+.erro-cadastro {
   color: red;
   font-weight: bold;  
 }

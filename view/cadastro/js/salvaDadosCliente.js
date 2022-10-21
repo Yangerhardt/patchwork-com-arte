@@ -1,4 +1,6 @@
-async function salvaDados(objeto) {
+async function salvaDadosCliente(url, objeto) {
+  const erroCadastro = document.querySelector(".final-cadastro")
+
   await fetch(url, {
     method: "POST",
     headers: {
@@ -9,7 +11,7 @@ async function salvaDados(objeto) {
       nome: objeto.nome,
       sobrenome: objeto.sobrenome,
       email: objeto.email,
-      senha: objeto.value,
+      senha: objeto.senha,
       cep: objeto.cep,
       bairro: objeto.bairro,
       rua: objeto.rua,
@@ -20,9 +22,15 @@ async function salvaDados(objeto) {
       data: new Date()
     }),
   })
-    .then((res) => res.json())
-    .then(console.log("Cadastro de cliente realizado"))
+    .then((res) => {
+      res.json()
+    })
+    .then(console.log("Cliente cadastrado com sucesso"))
+    .catch(error => {
+      erroCadastro.innerHTML = "Ocorreu um erro, revise os seus dados"
+      console.error(error);
+    })
 };
 
 
-export default salvaDados
+export default salvaDadosCliente

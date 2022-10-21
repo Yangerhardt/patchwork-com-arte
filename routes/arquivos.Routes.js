@@ -17,3 +17,7 @@ routerArquivos
   });
 
 export default routerArquivos
+
+//Falta testar e ver se funcionou com o rotues
+
+// ainda falta finalizar o upload de imagens com os problemas de CORS'
