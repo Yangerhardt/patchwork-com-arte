@@ -53,18 +53,17 @@
     <!--HEADER-->
 
     <!--CADASTRO DE PRODUTOS-->
-<div class="conteudo"></div>
     <div class="container">
       <form method="post" enctype="multipart/form-data" class="cadastro-produto">
         <div class="produto-cadastrado text-center"></div>
         <div class="campo-input">
           <label for="name">Nome do produto</label>
-          <input type="text" placeholder="Nome" class="cadastro-input cadastro-nome" />
+          <input type="text" name="nome" placeholder="Nome" class="cadastro-input cadastro-nome" />
           <div class="erro-nome"></div>
         </div>
         <div class="campo-input">
           <label for="name">Valor do produto</label>
-          <input type="text" placeholder="Valor" class="cadastro-input cadastro-valor"/>
+          <input type="text" name="valor" placeholder="Valor" class="cadastro-input cadastro-valor"/>
           <div class="container-valor">
             <p class="cadastro-moeda">R$</p>
           </div>
@@ -72,7 +71,7 @@
         </div>
         <div class="campo-input">
           <label for="name">Status do produto</label>
-          <input type="text" placeholder="Disponível ou indisponível" class="cadastro-input cadastro-status" list="opcoes"/>
+          <input type="text" name="status" placeholder="Disponível ou indisponível" class="cadastro-input cadastro-status" list="opcoes"/>
             <datalist id="opcoes">
               <option name="category1" value="Disponivel" selected="true"></option>
               <option name="category1" value="Indisponivel"></option>
@@ -81,7 +80,7 @@
         </div>
         <div class="campo-input">
           <label for="name">Imagem do produto</label>
-          <input type="file" accept=".jpg, .svg, .png" class="cadastro-img" name="avatar"/>
+          <input type="file" name="imagem" accept=".jpg, .svg, .png" class="cadastro-img"/>
           <div class="erro-img"></div>
         </div>
         <input type="submit" value="Cadastrar" class="cadastro-btn">

@@ -1,13 +1,12 @@
 async function salvaImagem(entrada) {
   fetch("http://localhost:8080/arquivos", {
     method: "POST",
-/*     mode: "no-cors", */
     headers: {
       "Content-type": "application/json",
       Accept: "application/json",
     },
     body: JSON.stringify({
-      teste: entrada,
+      codigoBase64: entrada,
     }),
   })
     .then((r) => r.json())

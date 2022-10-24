@@ -1,5 +1,6 @@
 import consultaCep from "./consultaCep.js";
 import salvaDadosCliente from "./salvaDadosCliente.js";
+import verificaEmailExistente from "./verificaEmailExistente.js";
 import Verificacao from "./verificacao.js";
 
 // MUDAR OS QS PARA querySelectorALL E PEGAR CADA UM NO MOMENTO DO USO DENTRO DO ARRAY/OBJECT
@@ -16,13 +17,7 @@ const sobrenome = document.querySelector(".cadastro-sobrenome");
 const senha = document.querySelector(".cadastro-senha1");
 const confirmaSenha = document.querySelector(".cadastro-senha2");
 const form = document.querySelector(".cadastro-produto");
-const cadastroFinalizado = document.querySelector(".final-cadastro")
 const testeQS = document.querySelectorAll("input");
-/* console.log(testeQS);
-
-for (let elements of testeQS) {
-  console.log(elements);
-} */
 
 const url = "http://localhost:8080/clientes";
 
@@ -41,19 +36,21 @@ cep.addEventListener("focusout", async () => {
   }
 });
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let cliente = {};
   let totalErros = [];
 
 
-  Verificacao.verificaEmail(email.value, totalErros);
   Verificacao.verificaNomeSobrenome(nome.value, nome.name, totalErros);
   Verificacao.verificaNomeSobrenome(sobrenome.value, sobrenome.name, totalErros);
   Verificacao.verificaNumero(numeroRua.value, numeroRua.name, totalErros);
   Verificacao.verificaCep(cep.value, totalErros);
   Verificacao.verificaSenha(senha.value, totalErros);
   Verificacao.verificaSenhaDuplicada(senha.value, confirmaSenha.value, totalErros);
+  Verificacao.verificaEmail(email.value, totalErros);
+  await verificaEmailExistente(email.value, totalErros);
+  
 
   if (totalErros.length === 0) {
     cliente = {
@@ -70,12 +67,10 @@ form.addEventListener("submit", (e) => {
       estado: estado.value,
     };
 
-/*     salvaDadosCliente(url, cliente); */
+    salvaDadosCliente(url, cliente);
     for (let elements of testeQS) {
-      elements.value = ""
+      elements.value = "";
     }
-    cadastroFinalizado.innerHTML = "Cadastro realizado com sucesso &#10004;"
-    cadastroFinalizado.classList.add("p-2")
-    location.replace("./cadastroSuccess/")
+    location.replace("./cadastroSuccess/");
   }
 });

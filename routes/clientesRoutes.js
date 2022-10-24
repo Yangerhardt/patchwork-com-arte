@@ -1,5 +1,6 @@
 import express from "express";
 import clientes from "../models/Cliente.js";
+import bcrypt from "bcrypt"
 
 let routerClientes = express.Router();
 
@@ -21,8 +22,20 @@ routerClientes
     });
   })
 
-  .post("/clientes", (req, res) => {
-    let cliente = new clientes(req.body);
+  .post("/clientes", async (req, res) => {
+    let cliente = new clientes({
+      nome: req.body.nome,
+      sobrenome: req.body.sobrenome,
+      email: req.body.email,
+      senha: await bcrypt.hash(req.body.senha, 10),
+      cep: req.body.cep,
+      bairro: req.body.bairro,
+      rua: req.body.rua,
+      numero: req.body.numero,
+      complemento: req.body.complemento,
+      cidade: req.body.cidade,
+      estado: req.body.estado,
+    });
     cliente.save((err, clientes) => {
       if (err) {
         res.status(500).send(`${err.message} - Falha ao cadastrar cliente`);

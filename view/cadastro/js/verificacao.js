@@ -1,4 +1,4 @@
-class Verificacao {
+class VerificacaoCadastro {
 
   static verificaCep = (cep, arr) => {
     const reg = new RegExp(/^[0-9]+$/);
@@ -79,4 +79,4 @@ class Verificacao {
 
 }
 
-export default Verificacao
+export default VerificacaoCadastro

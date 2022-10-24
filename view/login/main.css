@@ -1,0 +1,66 @@
+@import url(/view/home/css/global.css);
+
+.container {
+  min-width: 450px;
+  max-width: 60%;
+  margin-bottom: 70px;
+}
+
+form {
+  margin-top: 100px;
+  background-color: var(--dark);
+  padding: 50px 50px 70px 50px;
+  border-radius: 20px;
+}
+
+.campo-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.campo-input label {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--teste);
+}
+
+.login-input {
+  border: none;
+  padding: 12px 0 12px 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.login-input:focus {
+  outline: solid 2px var(--teste);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--teste);
+  transition: 0.3s ease;
+  font-size: 1.2em;
+  margin-top: 12px;
+}
+
+.login-btn:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0.8;
+  color: white;
+}
+
+.erro-email,
+.erro-senha {
+  color: red;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

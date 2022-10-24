@@ -61,7 +61,7 @@ form {
 }
 
 .cadastro-input:focus {
-  outline: none;
+  outline: solid 2px var(--teste);
 }
 
 .cadastro-btn {

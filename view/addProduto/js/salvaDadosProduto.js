@@ -14,7 +14,6 @@ async function salvaDados(url, nome, valor, status, img) {
     }),
   })
     .then((res) => res.json())
-    .then(console.log("Cadastro realizado"))
 };
 
 
