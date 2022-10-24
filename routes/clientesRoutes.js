@@ -1,19 +1,19 @@
 import express from "express";
 import clientes from "../models/Cliente.js";
-import bcrypt from "bcrypt"
+import bcrypt from "bcrypt";
 
 let routerClientes = express.Router();
 
 routerClientes
   .get("/clientes", (req, res) => {
     clientes.find((err, clientes) => {
-      res.status(200).json(clientes);
+      res.status(200).json(clientes)
     });
   })
 
   .get("/clientes/:id", (req, res) => {
     const id = req.params.id;
-    clientes.findById(id, (err, clientes) => {
+    clientes.findById(id, '-senha', (err, clientes) => {
       if (err) {
         res.status(500).send("Falha ao encontrar id do cliente");
       } else {
@@ -23,11 +23,12 @@ routerClientes
   })
 
   .post("/clientes", async (req, res) => {
+    const salt = await bcrypt.genSalt(12);
     let cliente = new clientes({
       nome: req.body.nome,
       sobrenome: req.body.sobrenome,
       email: req.body.email,
-      senha: await bcrypt.hash(req.body.senha, 10),
+      senha: await bcrypt.hash(req.body.senha, salt),
       cep: req.body.cep,
       bairro: req.body.bairro,
       rua: req.body.rua,
@@ -43,6 +44,17 @@ routerClientes
         res.status(200).send(clientes);
       }
     });
+  })
+
+  .post("/clientes/auth", async (req, res) => {
+    const user = await clientes.findOne({ email: req.body.email });
+    const checaSenha = await bcrypt.compare(req.body.senha, user.senha);
+
+    if (!checaSenha) {
+      res.status(422).json({ msg: "Falha" });
+    } else {
+      res.status(200).json({ msg: "Conectado" });
+    }
   })
 
   .patch("/clientes/:id", (req, res) => {

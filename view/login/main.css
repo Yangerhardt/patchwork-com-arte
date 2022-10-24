@@ -37,6 +37,17 @@ form {
   outline: solid 2px var(--teste);
 }
 
+.login-usuario a {
+  text-decoration: none;
+  color: var(--teste);
+  margin-bottom: 12px;
+}
+
+.login-usuario a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 .login-btn {
   width: 100%;
   padding: 12px 0;

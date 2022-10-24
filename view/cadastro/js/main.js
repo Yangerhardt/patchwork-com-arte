@@ -41,7 +41,6 @@ form.addEventListener("submit", async (e) => {
   let cliente = {};
   let totalErros = [];
 
-
   Verificacao.verificaNomeSobrenome(nome.value, nome.name, totalErros);
   Verificacao.verificaNomeSobrenome(sobrenome.value, sobrenome.name, totalErros);
   Verificacao.verificaNumero(numeroRua.value, numeroRua.name, totalErros);

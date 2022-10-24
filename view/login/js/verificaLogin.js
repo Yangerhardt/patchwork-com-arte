@@ -13,6 +13,10 @@ class VerificacaoLogin {
     if (senha.trim() === "") {
       erro.innerHTML = "Digite a senha";
       arr.push('erro-senha')
+    } else if (senha.length < 5) {
+      erro.innerHTML = "A senha deve conter no mínimo 5 caracteres"
+    } else {
+      erro.innerHTML = ""
     }
   };
 }
