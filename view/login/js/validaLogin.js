@@ -6,6 +6,7 @@ async function validaLogin(email, senha) {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
+      
     },
     body: JSON.stringify({
       email: email,

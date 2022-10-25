@@ -75,3 +75,11 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+@media (min-width: 840px) {
+  .container {
+    min-width: 450px;
+    max-width: 550px;
+    margin-bottom: 70px;
+  }
+}

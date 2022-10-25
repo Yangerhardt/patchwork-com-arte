@@ -64,6 +64,7 @@ form.addEventListener("submit", async (e) => {
       complemento: complemento.value,
       cidade: cidade.value,
       estado: estado.value,
+      role: "user"
     };
 
     salvaDadosCliente(url, cliente);

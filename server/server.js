@@ -2,6 +2,7 @@ import app from "../app.js";
 import routerProdutos from "../routes/produtosRoutes.js";
 import routerClientes from "../routes/clientesRoutes.js";
 import routerArquivos from "../routes/arquivos.Routes.js";
+import userRouter from "../routes/userRoutes.js";
 import express from "express";
 
 app.listen(8080, () => {
@@ -12,4 +13,10 @@ app.get("/", (req, res) => {
   res.status(200).send("Testando método GET");
 });
 
-app.use(express.json(), routerProdutos, routerClientes, routerArquivos);
+app.use(
+  express.json(),
+  routerProdutos,
+  routerClientes,
+  routerArquivos,
+  userRouter
+);

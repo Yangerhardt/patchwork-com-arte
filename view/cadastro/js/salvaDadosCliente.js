@@ -19,6 +19,7 @@ async function salvaDadosCliente(url, objeto) {
       complemento: objeto.complemento,
       cidade: objeto.cidade,
       estado: objeto.estado,
+      role: objeto.role,
       data: new Date()
     }),
   })

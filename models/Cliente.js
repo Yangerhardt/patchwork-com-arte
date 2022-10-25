@@ -14,7 +14,8 @@ const clienteSchema = new mongoose.Schema( {
   complemento: {type: String},
   cidade: {type: String, required: true},
   estado: {type: String, required: true},
-  data: {type: Date}
+  data: {type: Date},
+  role: {type: String}
 })
 
 const clientes = mongoose.model("clientes", clienteSchema)
