@@ -1,7 +1,8 @@
 import procuraEmail from "./procuraEmail.js";
 import VerificacaoLogin from "./verificaLogin.js";
 import validaLogin from "./validaLogin.js";
-import seUsuarioLogado from "../../user/js/procuraLogin.js";
+import seUsuarioLogado from "../../user/js/seUsuarioLogado.js";
+
 
 const email = document.querySelector(".login-email");
 const senha = document.querySelector(".login-senha");
@@ -33,7 +34,7 @@ form.addEventListener("submit", async (e) => {
       console.log(resultadoLogin);
       localStorage.setItem("Authorization", resultadoLogin);
       if (resultadoLogin == "Falha") {
-        erroSenha.innerHTML = "Senha incorreta, tente novamente";
+        erroSenha.innerHTML = "Senha incorreta";
       } else {
         erroSenha.innerHTML = "";
         location.replace("../user/index.html");

@@ -1,5 +1,5 @@
 import express from "express";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
 let userRouter = express.Router();
 
@@ -20,8 +20,10 @@ const checkToken = (req, res, next) => {
   }
 };
 
-userRouter.get("/user", checkToken, (req, res) => {
-  res.status(200).json({ msg: "Logado"})
+userRouter.get("/user", checkToken, async (req, res) => {
+
+
+  res.status(200).json({ msg: "Logado" });
 });
 
 /* const checkRole = (req, res, next) => {

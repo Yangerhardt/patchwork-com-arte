@@ -1,5 +1,5 @@
 async function seUsuarioLogado(data) {
-  let dadosRecebidos = "";
+  let dadosSaida = "";
 
   const res = await fetch("http://localhost:8080/user", {
     method: "GET",
@@ -8,8 +8,8 @@ async function seUsuarioLogado(data) {
     },
   });
   const dados = res.json();
-  dadosRecebidos = dados;
-  return dadosRecebidos;
+  dadosSaida = dados;
+  return dadosSaida;
 }
 
 export default seUsuarioLogado;
