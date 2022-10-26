@@ -13,7 +13,8 @@ const checkToken = (req, res, next) => {
 
   try {
     const secret = process.env.SECRET;
-    jwt.verify(token, secret);
+    const teste = jwt.verify(token, secret);
+    console.log(teste);
     next();
   } catch (err) {
     res.status(400).json({ msg: "Token inválido" });
@@ -21,8 +22,6 @@ const checkToken = (req, res, next) => {
 };
 
 userRouter.get("/user", checkToken, async (req, res) => {
-
-
   res.status(200).json({ msg: "Logado" });
 });
 
