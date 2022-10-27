@@ -5,7 +5,9 @@ import routerArquivos from "../routes/arquivos.Routes.js";
 import userRouter from "../routes/userRoutes.js";
 import express from "express";
 
-app.listen(8080, () => {
+const port = process.env.API_PORT || 8080
+
+app.listen(port, () => {
   console.log("Servidor escutando em http://localhost:8080");
 });
 

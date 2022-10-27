@@ -1,5 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
+import { checkHost } from "../middleware/Autenticacao.js";
 
 let userRouter = express.Router();
 
@@ -21,9 +22,8 @@ const checkToken = (req, res, next) => {
   }
 };
 
-userRouter.get("/user", checkToken, async (req, res) => {
+userRouter.get("/user", checkHost, checkToken, async (req, res) => {
   res.status(200).json({ msg: "Logado" });
 });
-
 
 export default userRouter;

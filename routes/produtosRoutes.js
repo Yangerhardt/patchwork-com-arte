@@ -1,16 +1,17 @@
 import express from "express";
+import { checkHost } from "../middleware/Autenticacao.js";
 import produtos from "../models/Produto.js";
 
 let routerProdutos = express.Router();
 
 routerProdutos
-  .get("/produtos", (req, res) => {
+  .get("/produtos", checkHost, (req, res) => {
     produtos.find((err, produtos) => {
       res.status(200).json(produtos);
     });
   })
 
-  .get("/produtos/:id", (req, res) => {
+  .get("/produtos/:id", checkHost, (req, res) => {
     const id = req.params.id;
     produtos.findById(id, (err, produtos) => {
       if (err) {
@@ -21,7 +22,7 @@ routerProdutos
     });
   })
 
-  .post("/produtos", (req, res) => {
+  .post("/produtos", checkHost, (req, res) => {
     let produto = new produtos(req.body);
     produto.save((err, produtos) => {
       if (err) {
@@ -32,7 +33,7 @@ routerProdutos
     });
   })
 
-  .patch("/produtos/:id", (req, res) => {
+  .patch("/produtos/:id", checkHost, (req, res) => {
     const id = req.params.id;
     produtos.findByIdAndUpdate(id, req.body, (err) => {
       if (err) {
@@ -41,7 +42,7 @@ routerProdutos
     });
   })
 
-  .delete("produtos/:id", (req, res) => {
+  .delete("produtos/:id", checkHost, (req, res) => {
     const id = req.params.id;
     produtos.findByIdAndDelete(id, (err) => {
       if (err) {

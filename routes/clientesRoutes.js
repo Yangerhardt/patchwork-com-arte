@@ -2,35 +2,18 @@ import express from "express";
 import clientes from "../models/Cliente.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import {checkToken, checkHost} from "../middleware/Autenticacao.js"
 
 let routerClientes = express.Router();
 
-//Check to make sure header is not undefined, if so, return Forbidden (403)
-const checkToken = (req, res, next) => {
-  const header = req.headers["authorization"];
-  const token = header && header.split(" ")[1];
-
-  if (!token) {
-    return res.status(401).json({ msg: "Acesso negado." });
-  }
-
-  try {
-    const secret = process.env.SECRET;
-    jwt.verify(token, secret);
-    next();
-  } catch (err) {
-    res.status(400).json({ msg: "Token inválido" });
-  }
-};
-
 routerClientes
-  .get("/clientes", (req, res) => {
+  .get("/clientes", checkHost, (req, res) => {
     clientes.find((err, clientes) => {
       res.status(200).json(clientes);
     });
   })
 
-  .get("/clientes/:id", checkToken, (req, res) => {
+  .get("/clientes/:id", checkToken, checkHost, (req, res) => {
     const id = req.params.id;
     clientes.findById(id, "-senha", (err, clientes) => {
       if (err) {
@@ -41,7 +24,7 @@ routerClientes
     });
   })
 
-  .post("/clientes", async (req, res) => {
+  .post("/clientes", checkHost, async (req, res) => {
     const salt = await bcrypt.genSalt(12);
     let cliente = new clientes({
       nome: req.body.nome,
@@ -66,7 +49,7 @@ routerClientes
     });
   })
 
-  .post("/clientes/auth", async (req, res) => {
+  .post("/clientes/auth", checkHost, async (req, res) => {
     const user = await clientes.findOne({ email: req.body.email });
     const checaSenha = await bcrypt.compare(req.body.senha, user.senha);
 
@@ -84,7 +67,7 @@ routerClientes
     }
   })
 
-  .patch("/clientes/:id", (req, res) => {
+  .patch("/clientes/:id", checkHost, (req, res) => {
     const id = req.params.id;
     clientes.findByIdAndUpdate(id, req.body, (err) => {
       if (err) {
@@ -93,7 +76,7 @@ routerClientes
     });
   })
 
-  .delete("clientes/:id", (req, res) => {
+  .delete("clientes/:id", checkHost, (req, res) => {
     const id = req.params.id;
     clientes.findByIdAndDelete(id, (err) => {
       if (err) {
