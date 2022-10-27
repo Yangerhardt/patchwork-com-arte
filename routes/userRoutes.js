@@ -14,7 +14,7 @@ const checkToken = (req, res, next) => {
   try {
     const secret = process.env.SECRET;
     const teste = jwt.verify(token, secret);
-    console.log(teste);
+    console.log(teste); // Retorna o ID do banco de dados do usuário
     next();
   } catch (err) {
     res.status(400).json({ msg: "Token inválido" });
@@ -25,8 +25,5 @@ userRouter.get("/user", checkToken, async (req, res) => {
   res.status(200).json({ msg: "Logado" });
 });
 
-/* const checkRole = (req, res, next) => {
-
-} */
 
 export default userRouter;

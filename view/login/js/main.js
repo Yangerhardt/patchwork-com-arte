@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let erros = [];
