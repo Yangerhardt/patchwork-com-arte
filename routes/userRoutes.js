@@ -14,8 +14,8 @@ const checkToken = (req, res, next) => {
 
   try {
     const secret = process.env.SECRET;
-    const teste = jwt.verify(token, secret);
-    console.log(teste); // Retorna o ID do banco de dados do usuário
+    const userId = jwt.verify(token, secret);
+    console.log(userId); // Retorna o ID do banco de dados do usuário
     next();
   } catch (err) {
     res.status(400).json({ msg: "Token inválido" });

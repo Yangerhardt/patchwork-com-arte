@@ -2,7 +2,7 @@ import express from "express";
 import clientes from "../models/Cliente.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import {checkToken, checkHost} from "../middleware/Autenticacao.js"
+import { checkToken, checkHost } from "../middleware/Autenticacao.js";
 
 let routerClientes = express.Router();
 
@@ -13,8 +13,21 @@ routerClientes // GOSTARIA DE TENTAR RETORNAR SOMENTE ALGUNS DADOS DOS CLIENTES,
     });
   })
 
-  .get("/clientes/:id", checkToken, checkHost, (req, res) => {
+  /*   .get("/clientes/:id", checkToken, checkHost, (req, res) => {
     const id = req.params.id;
+    clientes.findById(id, "-senha", (err, clientes) => {
+      if (err) {
+        res.status(500).send("Falha ao encontrar id do cliente");
+      } else {
+        res.status(200).json(clientes);
+      }
+    });
+  }) */
+
+  .get("/clientes/:token", checkHost, (req, res) => {
+    const token = req.params.token;
+    const secret = process.env.SECRET;
+    const id = jwt.verify(token, secret).id;
     clientes.findById(id, "-senha", (err, clientes) => {
       if (err) {
         res.status(500).send("Falha ao encontrar id do cliente");
@@ -38,7 +51,7 @@ routerClientes // GOSTARIA DE TENTAR RETORNAR SOMENTE ALGUNS DADOS DOS CLIENTES,
       complemento: req.body.complemento,
       cidade: req.body.cidade,
       estado: req.body.estado,
-      role: req.body.role
+      role: req.body.role,
     });
     cliente.save((err, clientes) => {
       if (err) {
@@ -62,7 +75,7 @@ routerClientes // GOSTARIA DE TENTAR RETORNAR SOMENTE ALGUNS DADOS DOS CLIENTES,
         if (err) {
           console.log(err);
         }
-        res.json({ msg: token })
+        res.json({ msg: token });
       });
     }
   })

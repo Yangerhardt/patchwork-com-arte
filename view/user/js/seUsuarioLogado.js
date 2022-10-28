@@ -1,10 +1,10 @@
-async function seUsuarioLogado(data) {
+async function seUsuarioLogado(entrada) {
   let dadosSaida = "";
 
   const res = await fetch("http://localhost:8080/user", {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${data}`,
+      Authorization: `Bearer ${entrada}`,
     },
   });
   const dados = res.json();
