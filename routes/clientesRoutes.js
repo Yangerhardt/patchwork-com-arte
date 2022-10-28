@@ -6,7 +6,7 @@ import {checkToken, checkHost} from "../middleware/Autenticacao.js"
 
 let routerClientes = express.Router();
 
-routerClientes
+routerClientes // GOSTARIA DE TENTAR RETORNAR SOMENTE ALGUNS DADOS DOS CLIENTES, PORÉM AINDA NÃO SEI COMO...
   .get("/clientes", checkHost, (req, res) => {
     clientes.find((err, clientes) => {
       res.status(200).json(clientes);

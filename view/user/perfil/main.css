@@ -1,0 +1,102 @@
+.login-top-section h1 {
+  color: var(--teste);
+  font-size: 2.5rem;
+}
+
+.login-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 48px 32px;
+}
+
+.login-top-section button,
+.login-editar-btn {
+  border: none;
+  background-color: var(--teste);
+  width: 120px;
+  height: 48px;
+  border-radius: 4px;
+  transition: 0.3s ease;
+  font-size: 1.2em;
+}
+
+.lado-a-lado {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container {
+  max-width: 90%;
+  margin-bottom: 70px;
+}
+
+form {
+  margin-top: 100px;
+  background-color: var(--dark);
+  padding: 50px 50px 20px 50px;
+  border-radius: 20px;
+}
+
+.campo-input-lado {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  width: 40%;
+}
+
+.campo-input {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 32px;
+  width: 87%;
+}
+
+.campo-input label,
+.campo-input-lado label {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--teste);
+}
+
+.login-input {
+  border: none;
+  padding: 12px 0 12px 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.login-input:focus {
+  outline: solid 2px var(--teste);
+}
+
+.login-final {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 48px 32px 0;
+}
+
+.login-editar-btn:hover,
+.login-top-section button:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0.8;
+  border-radius: 24px;
+  color: white;
+}
+
+@media (max-width: 970px) {
+  .lado-a-lado {
+    flex-direction: column;
+  }
+
+  .campo-input-lado {
+    width: 100%;
+  }
+
+  .campo-input {
+    width: 100%;
+  }
+}

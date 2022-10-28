@@ -19,7 +19,6 @@
 // Middleware para verificar se a página de requisição é a página da aplicação. Se não for, negará o acesso
 export const checkHost = (req, res, next) => {
   const host = req.headers.origin
-  console.log(host);
   if (host != process.env.PAGE_URL) {
     res.status(404).json({ msg: "Sem permissão" })
   } else {
