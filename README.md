@@ -5,7 +5,7 @@
 Website fully responsive, built to introduce the brand Patchwork com Arte. 
 
 ## Acknowledgements
-- [You can acess my portfolio with this link](https://yangerhardt.github.io/patchwork-com-arte/)
+- You can the website through this [link](https://yangerhardt.github.io/patchwork-com-arte/)
 
 
 ## Author
